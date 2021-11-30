@@ -8,7 +8,7 @@ function BreweryIndex({getBreweries, breweries}){
     useEffect(() => breweries.length === 0 && getBreweries(), [breweries])
     
     return(
-        <div>
+        <div className="cards">
             {breweries.map(brewery => <BreweryCard {...brewery} key={brewery.id}/>)}
         </div>
         
