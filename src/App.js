@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import BreweryIndex from './containers/Breweryindex';
+import BreweryIndex from './containers/BreweryIndex';
 
 
 function App() {
