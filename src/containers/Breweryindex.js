@@ -1,4 +1,6 @@
-import { useEffect } from "react";
+import { useEffect } from "react"
+import { getBreweries } from '../redux/actionCreators'
+import { connect } from 'react-redux'
 
 function BreweryIndex(props){
     
@@ -9,4 +11,4 @@ function BreweryIndex(props){
     )
 }
 
-export default BreweryIndex;
+export default connect(null, { getBreweries }) (BreweryIndex);
