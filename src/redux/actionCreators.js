@@ -1,5 +1,5 @@
 export const getBreweries = () => {
-    return dispatch => fetch("https://localhost:3000/breweries")
+    return dispatch => fetch("http://localhost:3000/breweries")
     .then(res => res.json())
-    .then(breweries => dispatch({type: "GET_BREWERIES", payload: []}))
+    .then(breweries => dispatch({type: "GET_BREWERIES", payload: breweries}))
 }

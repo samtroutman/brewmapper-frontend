@@ -4,11 +4,15 @@ import { connect } from 'react-redux'
 
 function BreweryIndex(props){
     
-    useEffect(() => console.log("test)"))
+    useEffect(() => breweries.length === 0 && props.getBreweries(), (props.breweries))
     
     return(
         <h1>Breweries</h1>
     )
 }
 
-export default connect(null, { getBreweries }) (BreweryIndex);
+const mapStateToProps = (state) => {
+    return {breweries: state.breweries}
+}
+
+export default connect(mapStateToProps, { getBreweries }) (BreweryIndex);
