@@ -2,9 +2,9 @@ import { useEffect } from "react"
 import { getBreweries } from '../redux/actionCreators'
 import { connect } from 'react-redux'
 
-function BreweryIndex(props){
+function BreweryIndex(getBreweries, breweries){
     
-    useEffect(() => breweries.length === 0 && props.getBreweries(), (props.breweries))
+    useEffect(() => breweries.length === 0 && getBreweries(), [breweries])
     
     return(
         <h1>Breweries</h1>
