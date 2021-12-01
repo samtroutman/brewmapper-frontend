@@ -1,7 +1,11 @@
-export default function BreweryCard({name, street, city, state, zip}){
+import { Link } from 'react-router-dom'
+
+export default function BreweryCard({id, name, city, state}){
+    
+    console.log(id)
     return (
         <div className="card">
-            <h2>{name}</h2>
+            <Link to={`/breweries/${id}`}><h2>{name}</h2></Link>
             <p>{city}, {state}</p>
         </div>
     )
