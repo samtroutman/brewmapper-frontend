@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import BreweryIndex from './containers/BreweryIndex';
+import BreweryShow  from  './components/BreweryShow';
 import { Switch, Route } from 'react-router-dom'
 
 
