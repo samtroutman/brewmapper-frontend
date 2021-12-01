@@ -16,7 +16,7 @@ export default function reducer(state=initialState, action){
             return {...state, breweries: action.payload}
         
             case "GET_BREWERY":
-                return {}
+                return {...state, selectedBrewery: action.payload}
         default:
             return {...state}
     }
