@@ -5,7 +5,7 @@ import BreweryCard from '../components/BreweryCard'
 
 function BreweryIndex({getBreweries, breweries}){
     
-    useEffect(() => breweries.length === 0 && getBreweries(), [breweries])
+    useEffect(getBreweries, [getBreweries])
     
     return(
         <div className="cards">
