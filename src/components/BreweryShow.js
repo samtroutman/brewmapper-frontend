@@ -10,7 +10,7 @@ function BreweryShow({getBrewery, name, street, city, state, zip, url }){
     useEffect(() => getBrewery(routeId), [getBrewery, routeId])
 
     return (
-        <div>
+        <div className="show">
             <a href={url}><h2>{name}</h2></a>
             <h3>{street} {city}, {state} {zip}</h3>
         </div>
