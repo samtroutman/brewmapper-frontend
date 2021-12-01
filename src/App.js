@@ -9,8 +9,8 @@ function App() {
     <div>
       <h1>Brewmapper</h1>
       <Switch>
-      <Route path="/breweries"><BreweryIndex /></Route>
       <Route path="/breweries/:id"><BreweryShow /></Route>
+      <Route path="/breweries"><BreweryIndex /></Route>
       </Switch>
       </div>
     
