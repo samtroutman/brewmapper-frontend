@@ -4,3 +4,10 @@ export const getBreweries = () => {
     .then(breweries => dispatch({type: "GET_BREWERIES", payload: breweries})
     )
 }
+
+export const getBrewery = (id) => {
+    return dispatch => fetch(`http://localhost:3000/breweries/${id}`)
+    .then(res => res.json())
+    .then(brewery => dispatch({type: "GET_BREWERY", payload: brewery})
+    )
+}
