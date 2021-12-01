@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { getBrewery } from '../redux/actionCreators'
 import { useEffect } from 'react'
 
-function BreweryShow({getBrewery}){
+function BreweryShow({getBrewery, name, street, city, state, zip, url }){
 
     const routeId = useParams().id
 
@@ -11,7 +11,8 @@ function BreweryShow({getBrewery}){
 
     return (
         <div>
-            <h1>Brewery Show Page</h1>
+            <a href={url}><h2>{name}</h2></a>
+            <h3>{street} {city}, {state} {zip}</h3>
         </div>
         
     )
