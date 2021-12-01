@@ -11,3 +11,5 @@ export const getBrewery = (id) => {
     .then(brewery => dispatch({type: "GET_BREWERY", payload: brewery})
     )
 }
+
+export const clearBrewery = () => ({type: "CLEAR_BREWERY"})

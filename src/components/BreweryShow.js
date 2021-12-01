@@ -1,13 +1,16 @@
 import { useParams } from 'react-router-dom'
 import { connect } from 'react-redux' 
-import { getBrewery } from '../redux/actionCreators'
+import { getBrewery, clearBrewery } from '../redux/actionCreators'
 import { useEffect } from 'react'
 
-function BreweryShow({getBrewery, name, street, city, state, zip, url }){
+function BreweryShow({getBrewery, name, street, city, state, zip, url, clearBrewery }){
 
     const routeId = useParams().id
 
-    useEffect(() => getBrewery(routeId), [getBrewery, routeId])
+    useEffect(() => 
+    {getBrewery(routeId)
+        return clearBrewery
+    }, [getBrewery, routeId, clearBrewery])
 
     return (
         <div className="show">
@@ -22,4 +25,4 @@ const mapStateToProps = (state) => {
     return {...state.selectedBrewery}
 }
 
-export default connect(mapStateToProps, {getBrewery})(BreweryShow);
+export default connect(mapStateToProps, {getBrewery, clearBrewery})(BreweryShow);

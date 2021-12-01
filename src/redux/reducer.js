@@ -1,13 +1,15 @@
-const initialState = {
-    breweries: [],
-    selectedBrewery: {
+const initialBrewery = {
         name: "", 
         street: "", 
         city: "", 
         state: "", 
         zip: 0, 
         url: ""
-    }
+}
+
+const initialState = {
+    breweries: [],
+    selectedBrewery: initialBrewery
 }
 
 export default function reducer(state=initialState, action){
@@ -17,6 +19,9 @@ export default function reducer(state=initialState, action){
         
             case "GET_BREWERY":
                 return {...state, selectedBrewery: action.payload}
+            case "CLEAR_BREWERY":
+                return{...state, selectedBrewery: initialBrewery}
+
         default:
             return {...state}
     }
