@@ -1,13 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 import BreweryIndex from './containers/BreweryIndex';
+import { Switch, Route } from 'react-router-dom'
 
 
 function App() {
   return (
     <div>
       <h1>Brewmapper</h1>
-      <BreweryIndex />
+      <Switch>
+      <Route path="/breweries"><BreweryIndex /></Route>
+      <Route path="/breweries/:id"><BreweryShow /></Route>
+      </Switch>
       </div>
     
   );
