@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { submitSignup } from '../redux/actionCreators'
+import { connect } from 'react-redux'
 
 function Auth(props){
 
@@ -29,4 +31,4 @@ function Auth(props){
     )
 }
 
-export default Auth;
+export default connect(null, {submitSignup})(Auth);
