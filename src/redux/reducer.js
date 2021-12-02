@@ -9,7 +9,10 @@ const initialBrewery = {
 
 const initialState = {
     breweries: [],
-    selectedBrewery: initialBrewery
+    selectedBrewery: initialBrewery,
+    user: {
+        username: ""
+    }
 }
 
 export default function reducer(state=initialState, action){

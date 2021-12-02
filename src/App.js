@@ -4,21 +4,28 @@ import BreweryIndex from './containers/BreweryIndex';
 import BreweryShow  from  './components/BreweryShow';
 import Nav from './components/Nav';
 import { Switch, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 
-function App() {
+function App(props) {
+  console.log(props)
   return (
     <div>
-      <Nav/>
       <h1>Brewmapper</h1>
+      <Nav/>
+      { props.user.username ?
       <Switch>
       <Route path="/breweries/:id"><BreweryShow /></Route>
       <Route path="/breweries"><BreweryIndex /></Route>
       <Route exact path="/"><BreweryIndex/></Route>
-      </Switch>
+      </Switch> : 
+      <Auth/>
+      }
       </div>
     
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({user: state.user})
+
+export default connect(mapStateToProps)(App);
