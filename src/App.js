@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 
 
 function App(props) {
-  console.log(props)
   return (
     <div>
       <h1>Brewmapper</h1>
