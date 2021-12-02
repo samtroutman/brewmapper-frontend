@@ -14,6 +14,7 @@ function App() {
       <Switch>
       <Route path="/breweries/:id"><BreweryShow /></Route>
       <Route path="/breweries"><BreweryIndex /></Route>
+      <Route exact path="/"><BreweryIndex/></Route>
       </Switch>
       </div>
     
