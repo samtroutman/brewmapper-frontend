@@ -18,7 +18,7 @@ function Auth(props){
     return( 
         <div>
           {signup ? <h1>Sign up</h1> : <h1>Login</h1>}
-          <form>
+          <form onSubmit={handleSubmit}>
             <label>
                 Username:
                 <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />

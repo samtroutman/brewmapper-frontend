@@ -24,7 +24,8 @@ export default function reducer(state=initialState, action){
                 return {...state, selectedBrewery: action.payload}
             case "CLEAR_BREWERY":
                 return{...state, selectedBrewery: initialBrewery}
-
+            case "SET_USER":
+                return{...state, user: action.payload};
         default:
             return {...state}
     }
