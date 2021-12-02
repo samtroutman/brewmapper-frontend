@@ -1,13 +1,19 @@
 import { useState } from 'react'
-import { submitSignup } from '../redux/actionCreators'
+import { submitSignup, submitLogin } from '../redux/actionCreators'
 import { connect } from 'react-redux'
 
 function Auth(props){
 
     const [signup, setSignup] = useState(false)
-    const toggleSignup = () => setSignup(!signup)
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    
+    const toggleSignup = () => setSignup(!signup)
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        signup ? props.submitSignup({ username, password }) : props.submitLogin({ username, password })
+    }
 
     return( 
         <div>
@@ -31,4 +37,4 @@ function Auth(props){
     )
 }
 
-export default connect(null, {submitSignup})(Auth);
+export default connect(null, { submitSignup, submitLogin })(Auth);
