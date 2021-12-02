@@ -3,8 +3,9 @@ import './App.css';
 import BreweryIndex from './containers/BreweryIndex';
 import BreweryShow  from  './components/BreweryShow';
 import Nav from './components/Nav';
-import { Switch, Route } from 'react-router-dom'
-import { connect } from 'react-redux'
+import Auth from './components/Auth';
+import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 
 function App(props) {
