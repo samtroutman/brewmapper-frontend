@@ -45,8 +45,8 @@ export const autoLogin =() => {
     return dispatch => fetch("http://localhost:3000/me", {
         headers: {
             'Authorization': localStorage.token
-        }
-    })
+          }
+        })
     .then(res => res.json())
     .then(response => {
         localStorage.token = response.token
