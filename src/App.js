@@ -22,8 +22,8 @@ function App({user, autoLogin}) {
       <Route path="/breweries"><BreweryIndex /></Route>
       <Route exact path="/"><BreweryIndex/></Route>
       </Switch> : 
-      <Auth/>
-      }
+      <Route exact path="/auth"><Auth/></Route>
+    }
       </div>
     
   );

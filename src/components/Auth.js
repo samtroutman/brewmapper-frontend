@@ -1,18 +1,21 @@
 import { useState } from 'react'
 import { submitSignup, submitLogin } from '../redux/actionCreators'
 import { connect } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 function Auth(props){
 
     const [signup, setSignup] = useState(false)
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const history = useHistory()
     
     const toggleSignup = () => setSignup(!signup)
 
     const handleSubmit = (e) => {
         e.preventDefault()
         signup ? props.submitSignup({ username, password }) : props.submitLogin({ username, password })
+        history.push("/breweries")
     }
 
     return( 

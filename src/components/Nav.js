@@ -8,7 +8,10 @@ function Nav({logout, username}){
     <button onClick={logout}>Log Out</button>
   </nav>
 
-  const renderLoggedOut = () => <nav>Welcome new user! Sign in or sign up!</nav>
+  const renderLoggedOut = () => <nav>
+      {/* Welcome user! Log in or sign up! */}
+      <NavLink to="/auth"><button>Sign up or log in</button></NavLink>
+      </nav>
 
   return username ? renderLoggedIn() : renderLoggedOut()
 }
