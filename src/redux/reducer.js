@@ -1,10 +1,12 @@
 const initialBrewery = {
         name: "", 
+        status: "",
+        reviewlink: "",
+        blogmap: "",
         street: "", 
         city: "", 
         state: "", 
         zip: 0, 
-        url: ""
 }
 
 const initialState = {
