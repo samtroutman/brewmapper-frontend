@@ -23,8 +23,9 @@ export const submitSignup = (user) => {
         body: JSON.stringify(user),
     })
     .then(res => res.json())
-    .then(user => dispatch({type: "SET_USER", payload: user}))
-}
+    .then(response => {
+        localStorage.token = response.token
+        dispatch({type: "SET_USER", payload: response.user})})}
 
 export const submitLogin = (user) => {
     return dispatch => fetch("http://localhost:3000/sessions", {
@@ -35,5 +36,7 @@ export const submitLogin = (user) => {
         body: JSON.stringify(user),
     })
     .then(res => res.json())
-    .then(user => dispatch({type: "SET_USER", payload: user}))
+    .then(response => {
+        localStorage.token = response.token
+        dispatch({type: "SET_USER", payload: response.user})})
 }
