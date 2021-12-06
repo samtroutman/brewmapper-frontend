@@ -68,7 +68,7 @@ button:hover:after {
 }
 
 button:active {
-  background-color: #ffdeda;
+  background-color: #FACC69;
   outline: 0;
 }
 
@@ -130,7 +130,7 @@ button:hover {
 }
 
 .card:active {
-  background-color: #ffdeda;
+  background-color: white;
   outline: 0;
 }
 
