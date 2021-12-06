@@ -45,6 +45,13 @@ export const autoLogin =() => {
         .then(res => handleUserResponse(res, dispatch))
       }
 
+export const logout = () => {
+    return dispatch => {
+        localStorage.clear()
+        dispatch({type: "LOGOUT"})
+    }
+    }
+
 function handleUserResponse(res, dispatch){
     if (res.ok) {
       res.json()
