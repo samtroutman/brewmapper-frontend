@@ -9,12 +9,14 @@ const initialBrewery = {
         zip: 0, 
 }
 
+const initialUser = {
+    username: ""
+  }
+
 const initialState = {
     breweries: [],
     selectedBrewery: initialBrewery,
-    user: {
-        username: ""
-    }
+    user: initialUser
 }
 
 export default function reducer(state=initialState, action){
@@ -28,6 +30,8 @@ export default function reducer(state=initialState, action){
                 return{...state, selectedBrewery: initialBrewery}
             case "SET_USER":
                 return{...state, user: action.payload};
+            case "LOGOUT":
+                 return {...state, user: initialUser}
         default:
             return {...state}
     }
