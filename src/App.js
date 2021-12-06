@@ -6,9 +6,12 @@ import Nav from './components/Nav';
 import Auth from './components/Auth';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { useEffect } from 'react'
 
 
 function App(props) {
+
+  // useEffect(() => localStorage.token && autoLogin, )
   return (
     <div>
       <h1>Brewmapper</h1>
