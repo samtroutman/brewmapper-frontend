@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { getBrewery, clearBrewery } from '../redux/actionCreators'
 import { useEffect } from 'react'
 
-function BreweryShow({getBrewery, name, street, city, state, zip, url, clearBrewery }){
+function BreweryShow({getBrewery, name, street, city, state, zip, status, reviewlink, blogmap, clearBrewery }){
 
     const routeId = useParams().id
 
@@ -14,8 +14,12 @@ function BreweryShow({getBrewery, name, street, city, state, zip, url, clearBrew
 
     return (
         <div className="show">
-            <a href={url}><h2>{name}</h2></a>
-            <h3>{street} {city}, {state} {zip}</h3>
+            <a href={reviewlink}><h2>{name}</h2></a>
+            <h3><i>{status}</i></h3>
+            <iframe src={blogmap}/>
+            <h3>{street}, 
+            <br/>
+            {city}, {state} {zip}</h3>
         </div>
         
     )
