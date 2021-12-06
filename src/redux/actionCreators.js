@@ -16,30 +16,25 @@ export const clearBrewery = () => ({type: "CLEAR_BREWERY"})
 
 export const submitSignup = (user) => {
     return dispatch => fetch("http://localhost:3000/users", {
-        method: 'POST',
+        method: 'POST', 
         headers: {
-            'Content-Type': 'application/json',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(user),
-    })
-    .then(res => res.json())
-    .then(response => {
-        localStorage.token = response.token
-        dispatch({type: "SET_USER", payload: response.user})})}
+      })
+      .then(res => handleUserResponse(res, dispatch))
+    }
 
 export const submitLogin = (user) => {
     return dispatch => fetch("http://localhost:3000/sessions", {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(user),
-    })
-    .then(res => res.json())
-    .then(response => {
-        localStorage.token = response.token
-        dispatch({type: "SET_USER", payload: response.user})})
-}
+      })
+      .then(res => handleUserResponse(res, dispatch))
+    }
 
 export const autoLogin =() => {
     return dispatch => fetch("http://localhost:3000/me", {
@@ -47,8 +42,18 @@ export const autoLogin =() => {
             'Authorization': localStorage.token
           }
         })
-    .then(res => res.json())
-    .then(response => {
+        .then(res => handleUserResponse(res, dispatch))
+      }
+
+function handleUserResponse(res, dispatch){
+    if (res.ok) {
+      res.json()
+      .then(response => {
         localStorage.token = response.token
-        dispatch({type: "SET_USER", payload: response.user})})
-}
+        dispatch({type: "SET_USER", payload: response.user})
+      })
+    } else {
+      res.json()
+      .then(res => alert(res.errors))
+    }
+  }
