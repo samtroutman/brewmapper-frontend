@@ -13,7 +13,7 @@ function BreweryShow({getBrewery, name, street, city, state, zip, status, review
     }, [getBrewery, routeId, clearBrewery])
 
     return (
-        <div className="show">
+        <div className=".show">
             <a href={reviewlink}><h2>{name}</h2></a>
             <h3><i>{status}</i></h3>
             <iframe src={blogmap}/>
