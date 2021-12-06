@@ -6,8 +6,9 @@ body {
 }
 
 h1 {
-  color:  teal;
+  color:  black;
   text-align: center;
+  font-family: Inter,sans-serif;
 }
 
 a:link, a:visited {
@@ -157,12 +158,7 @@ button:hover {
   /* width: 300px;
   height: 500px; */
   margin: 10px;
-  background-color: white;
-  border-color: black;
-  border-style: solid;
-  border-radius: 20px; 
 }
-
 
 .show iframe {
   width: 600px;
