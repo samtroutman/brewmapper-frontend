@@ -20,7 +20,7 @@ function Auth(props){
 
     return( 
         <div>
-          {signup ? <h1>Sign up</h1> : <h1>Login</h1>}
+          {signup ? <h2>Sign up</h2> : <h2>Login</h2>}
           <form onSubmit={handleSubmit}>
             <label>
                 Username:
