@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import BreweryIndex from './containers/BreweryIndex';
 import BreweryShow  from  './components/BreweryShow';
@@ -14,7 +13,7 @@ function App({user, autoLogin}) {
   useEffect(() => localStorage.token && autoLogin(), [autoLogin])
   return (
     <div>
-      <h1>Brewmapper</h1>
+      <h1>Map MI Beers</h1>
       <Nav/>
       { user.username ?
       <Switch>
