@@ -4,6 +4,7 @@ import{ logout } from '../redux/actionCreators'
 
 function Nav({logout, username}){
     const renderLoggedIn = () => <nav>
+    <h3>Hello, {username}!</h3>
     <NavLink to="/breweries"><button>See All Breweries</button></NavLink>
     <button>Saved Breweries</button>
     <NavLink to="/"><button onClick={logout}>Log Out</button></NavLink>
