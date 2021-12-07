@@ -52,6 +52,20 @@ export const logout = () => {
     }
     }
 
+export const submitSave = (savedBrewery, userId) => {
+  return dispatch => fetch(`http://localhost:3000/users/${userId}/savedbreweries`, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': localStorage.token
+    },
+    body: JSON.stringify(savedBrewery)
+  })
+  .then(res => {
+    res.json().then(savedBrewery => dispatch({type: "ADD_SAVED", payload: savedBrewery}))
+  })
+}
+
 function handleUserResponse(res, dispatch){
     if (res.ok) {
       res.json()
@@ -64,3 +78,5 @@ function handleUserResponse(res, dispatch){
       .then(res => alert(res.errors))
     }
   }
+
+
