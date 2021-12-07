@@ -2,10 +2,9 @@ import { useParams } from 'react-router-dom'
 import { connect } from 'react-redux' 
 import { getBrewery, clearBrewery } from '../redux/actionCreators'
 import { useEffect } from 'react'
-import { submitSave } from '../redux/actionCreators'
+import BrewerySave from './BrewerySave'
 
-
-function BreweryShow({getBrewery, name, street, city, state, zip, status, reviewlink, blogmap, clearBrewery, savedBrewery, userId, submitSave }){
+function BreweryShow({getBrewery, name, street, city, state, zip, status, reviewlink, blogmap, clearBrewery }){
 
     const routeId = useParams().id
 
@@ -13,11 +12,6 @@ function BreweryShow({getBrewery, name, street, city, state, zip, status, review
     {getBrewery(routeId)
         return clearBrewery
     }, [getBrewery, routeId, clearBrewery])
-
-    const onSave = (e) => {
-        e.preventDefault()
-        submitSave(savedBrewery, userId)
-    }
 
     return (
         <div className="show">
@@ -27,8 +21,8 @@ function BreweryShow({getBrewery, name, street, city, state, zip, status, review
             <h3>{street}, 
             <br/>
             {city}, {state} {zip}</h3>
-            <button onClick={onSave}>Save Brewery</button>
-        </div>
+<BrewerySave/>
+            </div>
         
     )
 }
@@ -37,4 +31,4 @@ const mapStateToProps = (state) => {
     return {...state.selectedBrewery}
 }
 
-export default connect(mapStateToProps, {getBrewery, clearBrewery, submitSave})(BreweryShow);
+export default connect(mapStateToProps, {getBrewery, clearBrewery})(BreweryShow);

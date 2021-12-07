@@ -53,7 +53,7 @@ export const logout = () => {
     }
 
 export const submitSave = (savedBrewery, userId) => {
-  return dispatch => fetch(`http://localhost:3000/users/${userId}/savedbreweries`, {
+  return dispatch => fetch(`http://localhost:3000/users/${userId}/saved_breweries`, {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',
