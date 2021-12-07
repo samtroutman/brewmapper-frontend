@@ -6,7 +6,7 @@ function Nav({logout, username}){
     const renderLoggedIn = () => <nav>
     <h3>Hello, {username}!</h3>
     <NavLink to="/breweries"><button>See All Breweries</button></NavLink>
-    <button>Saved Breweries</button>
+    <NavLink to="/savedbreweries"><button>Saved Breweries</button></NavLink>
     <NavLink to="/"><button onClick={logout}>Log Out</button></NavLink>
   </nav>
 

@@ -10,7 +10,8 @@ const initialBrewery = {
 }
 
 const initialUser = {
-    username: ""
+    username: "",
+    savedBreweries: []
   }
 
 const initialState = {
