@@ -17,7 +17,8 @@ const initialUser = {
 const initialState = {
     breweries: [],
     selectedBrewery: initialBrewery,
-    user: initialUser
+    user: initialUser,
+    selectedUser: initialUser
 }
 
 export default function reducer(state=initialState, action){
