@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import { submitSave } from '../redux/actionCreators'
 
 
-function BreweryShow({getBrewery, name, street, city, state, zip, status, reviewlink, blogmap, clearBrewery, savedBrewery, userId }){
+function BreweryShow({getBrewery, name, street, city, state, zip, status, reviewlink, blogmap, clearBrewery, savedBrewery, userId, submitSave }){
 
     const routeId = useParams().id
 
